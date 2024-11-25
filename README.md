@@ -1,4 +1,4 @@
-<div style="padding-left: 20px; padding-right: 20px;">
+<div style="padding-left: 40px; padding-right: 40px;">
   This content has left and right padding.
 </div>
 
