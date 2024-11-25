@@ -1,6 +1,5 @@
-<img src="Ecowiz/assets/logo.png" alt="icon" height="50" style="vertical-align: middle;" /> 
-<span style="font-size: 40px; vertical-align: middle; line-height: 50px; font-weight: bold;">: Eco-friendly POS System</span>
-<hr />
+<img src="assets/logo.png" alt="icon" height="50" style="vertical-align: middle;" /> 
+<span style="font-size: 40px; font-weight: bold;">Eco-friendly POS System</span>
 
 ## I. Project Overview
 <p style="text-align: justify; text-indent: 30px;">
