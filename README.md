@@ -1,20 +1,8 @@
-## Getting Started
+<img src="assets/logo.png" alt="icon" height="50" style="vertical-align: middle;" /> 
+<span style="font-size: 40px; vertical-align: middle; line-height: 50px; font-weight: bold;">: Eco-friendly POS System</span>
+<hr />
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-
-
+## I. Project Overview
+<p style="text-align: justify; text-indent: 30px;">
+        This java-based console system was created to support the 12th Sustainable Development Goal – Responsible Consumption and Production. It involves a simulation of a point-of-sale (POS) transaction system that focuses on managing and promoting eco-friendly products, calculating environmental impact scores, and offering incentives for sustainable purchases.
+</p>
