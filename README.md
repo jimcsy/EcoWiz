@@ -1,6 +1,4 @@
-<div style="padding-left: 40px; padding-right: 40px;">
-  This content has left and right padding.
-</div>
+
 
 EcoWiz: Eco-friendly POS System
 By Genesis Jim C. Cuasay
