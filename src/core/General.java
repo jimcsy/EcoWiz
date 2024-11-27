@@ -115,6 +115,5 @@ public class General {
                 scan.nextLine();
                 break;
         }
-        scan.close();
     }
 }
