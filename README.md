@@ -1,6 +1,6 @@
 <h1 align ="center">
   <br>
-  <img src="assets/logo.png" alt="icon" height="100" /img> 
+  <img src="images/logo.png" alt="icon" height="120" /img> 
   <br>
   <strong>
   🛒 ECO-FRIENDLY POS SYSTEM
@@ -10,22 +10,22 @@
 
 <p align="center">
   <a href="#i-project-overview">
-    <img src="assets/overview.png" alt="icon" height="30" >
+    <img src="images/overview.png" alt="icon" height="30" >
   </a>
   <a href="#ii-object-oriented-programming-principles">
-    <img src="assets/principles.png" alt="icon" height="30" >
+    <img src="images/principles.png" alt="icon" height="30" >
   </a>
   <a href="#iii-sdg-integration">
-    <img src="assets/integration.png" alt="icon" height="30" >
+    <img src="images/integration.png" alt="icon" height="30" >
   </a>
   <a href="#iv-how-to-run-the-program">
-    <img src="assets/execution.png" alt="icon" height="30" >
+    <img src="images/execution.png" alt="icon" height="30" >
   </a>
 </p>
 
 <h2 align = "center">
         <a href = "https://drive.google.com/drive/u/3/folders/1MlFnAPzaqlr_FCRhPzARKhxZGPCtOl6U">
-        <img src = https://github.com/jimcsy/EcoWiz/blob/main/assets/clickbait.gif>
+        <img src = https://github.com/jimcsy/EcoWiz/blob/main/images/loop.gif>
         </a>
 </h2>
 
@@ -74,27 +74,71 @@ ___
 
 ## IV. HOW TO RUN THE PROGRAM❓
 
-+ **Prerequisite**
-    + `MySql`
-    + `JDBC .jar connection`
-    + `Java`
+### 1. **Prerequisite**&nbsp;🧩
+  + Java Development Kit
+  + Database Management System – `MySql`
+  + Java Database Connectivity (JDBC) driver
+  + IDE - `Visual Studio Code (VsCode)`
 
-+ **Change Credentials**
 
-```bash
-# Class file name: DBConnection.java
-private static String dbUrl = "jdbc:mysql://localhost:3306/";
-private static String dbUser = "root";
-private static String dbPassword = "genesis";  
-private static String sqlFilePath = "C:\\Users\\Genesis Jim\\Desktop\\OOP_Finals - Copy (2)\\ecowizDatabase.sql"; 
+### 2. **Run the Program**&nbsp;▶️ 
+- **Download** and **extract** the folder from this repository, `ecowiz.zip`.
+- **Open** the extracted folder in a **new window** within `VSCode`.
+- **Check the File Structure**
+  ```bash
+  lib/
+  ├── mysql-connector-j-9.1.0.jar
+  src/
+  ├── commerce/
+  │   ├── Customer.java
+  │   ├── CustomerCredentials.java
+  │   ├── CustomerHomePage.java
+  │   ├── Guest.java
+  │   └── Products.java
+  ├── core/
+  │   ├── DatabaseConnection.java
+  │   └── General.java
+  ├── main/
+  │   └── Ecowiz.java
+  ├── transaction/
+  │   ├── Buy.java
+  │   ├── Redeem.java
+  │   └── Transaction.java
+  ecowizDatabase.sql
+  README.md
+  ```
 
-```
+- **Change Credentials** <br>
+Locate the `DatabaseConnection.java` file in your `VsCode` and update the values with your *`MySql credentials`*.
 
-+ **Run**
-    + `VsCode`
-    + `CMD`
-    + `VID BA AHSHAHS`
+  ```bash
+  # Class file name: DBConnection.java
+  private static String dbUrl = "jdbc:mysql://localhost:3306/";
+  private static String dbUser = "root";
+  private static String dbPassword = "genesis";  
+  private static String sqlFilePath = "C:\\Users\\Genesis Jim\\Desktop\\OOP_Finals - Copy (2)\\ecowizDatabase.sql"; 
+  ```
+#### 2.1 **Using Visual Studio Code (VSCode):**
+  - After changing the credential values, locate the `Java Projects` in the Explorer tab and add the `mysql-connector-java.jar` file under the `Referenced Libraries `section.
+  - **Run** the `Ecowiz.java` file.
+  - If errors occur, please verify the file structure and ensure that your credentials are correctly entered.
 
+#### 2.2 Using Command Prompt (CMD):
+- **Navigate** to the project directory by running the following command:
+  - ```bash
+    cd "path\to\your\project\src"
+    #cd "C:\Users\Genesis Jim\Desktop\Finals\EcoWiz\src"
+    ```
+- **Compile** the program using the following command:
+  - ```bash
+    javac -d out -cp ".;path\to\your\mysql-connector-java.jar" main\*.java transaction\*.java commerce\*.java core\*.java
+
+    ```
+  - This step will generate a folder named `out` within your src directory. Inside the `out` folder, you will find *four subfolders*, each named after the corresponding package (`main`, `transaction`, `commerce`, `core`). These subfolders will contain the compiled `.class files`, which are the converted versions of your `.java files`.
+-  **Run** the compiled program using the following command:
+    - ```bash
+      java -cp "out; path\to\your\mysql-connector-java.jar" main.Ecowiz
+      ```
 
 
 
