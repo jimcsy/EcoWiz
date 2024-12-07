@@ -9,6 +9,10 @@
 </h1>
 
 <p align="center">
+  <strong>
+  Table of Contents
+  </strong>
+  <br>
   <a href="#i-project-overview">
     <img src="images/overview.png" alt="icon" height="30" >
   </a>
@@ -49,7 +53,7 @@ Discover more: [Features](#features) • [Goal](#goal) • [Limitation](#limitat
 ###   &nbsp;&nbsp;🚧&nbsp;&nbsp;**LIMITATION**
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This project does not cover administrative features such as checking product availability, updating product prices, or managing product quantities. Although these features would add value to the system, they were excluded due to time constraints and the creators' involvement in other ongoing projects. Despite these exclusions, the project successfully meets the rubric requirements and adheres to Object-Oriented Programming (OOP) principles.
 ___
-## II. OBJECT-ORIENTED PRINCIPLES&nbsp;📋
+## II. OBJECT-ORIENTED PROGRAMMING PRINCIPLES&nbsp;📋
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This project utilizes the four object-oriented principles: encapsulation, inheritance, polymorphism, and abstraction. These principles were instrumental in enhancing the modularity and readability of the code.
 | **Principle**    | **Application**  |
 |:--------------------------------:|-----------|
@@ -111,8 +115,8 @@ ___
 - **Change Credentials** <br>
 Locate the `DatabaseConnection.java` file in your `VsCode` and update the values with your *`MySql credentials`*.
 
-  ```bash
-  # Class file name: DBConnection.java
+  ```java
+  // Class file name: DBConnection.java
   private static String dbUrl = "jdbc:mysql://localhost:3306/";
   private static String dbUser = "root";
   private static String dbPassword = "genesis";  
@@ -139,6 +143,7 @@ Locate the `DatabaseConnection.java` file in your `VsCode` and update the values
     - ```bash
       java -cp "out; path\to\your\mysql-connector-java.jar" main.Ecowiz
       ```
+
 
 
 
