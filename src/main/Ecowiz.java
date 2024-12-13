@@ -5,18 +5,19 @@ import commerce.CustomerHomePage;
 import commerce.Guest;
 import core.DatabaseConnection;
 
-public class Ecowiz {
+public class Ecowiz{
     public static void main(String[] args) {
         Customer user = new Customer();
         CustomerHomePage menu = new CustomerHomePage();
         Guest guest = new Guest();
 
-        if (!DatabaseConnection.createDatabase("ecowizDb")) {
+        if (!DatabaseConnection.createDatabase("ecowizDatabase")) {
             System.out.println("Failed to connect to the database. Exiting...");
             System.exit(1);
         }
 
         boolean isRunning = true;
+        user.instructionBack();
         while (isRunning) {
             user.clearScreen();
             user.header("", 0);

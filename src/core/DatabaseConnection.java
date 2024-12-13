@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class DatabaseConnection extends General{
     // Database credentials
-    private static String databaseName = "ecowiz"; //do not change
+    private static String databaseName = "ecowizDatabase"; //do not change
     private static String dbUrl = "jdbc:mysql://localhost:3306/";  // change if needed --> jdbc:mysql://"HOST CHANGE":"PORT CHANGE"/;
     private static String dbUser = "root";  // change
     private static String dbPassword = "genesis";  // change
-    private static String sqlFilePath = "C:\\Users\\Genesis Jim\\Desktop\\OOP_Finals - Copy (2)\\ecowizDatabase.sql"; // change
+    private static String sqlFilePath = "C:\\Users\\Genesis Jim\\Desktop\\OOP_Finals - Copy (2)\\EcoWiz\\ecowizDatabase.sql"; // change
 
     public static Scanner sc = new Scanner(System.in);
 
@@ -22,11 +22,12 @@ public class DatabaseConnection extends General{
         try {
             return DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
-            System.out.println("Error connecting to the database.\n");
+            System.err.println("Error connecting to the database. Make sure to update your credentials in the code." + e.getMessage());
             return connectionDetails();
         }
     }
 
+    //retry connection
     private static Connection connectionDetails() throws SQLException {
         System.out.print("Enter MySQL Host (e.g., localhost):\t ");
         String host = sc.nextLine();
@@ -49,19 +50,28 @@ public class DatabaseConnection extends General{
         return attemptConn(dbUrl + databaseName, dbUser, dbPassword);
     }
 
+    private static boolean isDatabaseExist(Statement stmt, String dbName) throws SQLException {
+        ResultSet resultSet = stmt.executeQuery("SHOW DATABASES LIKE '" + dbName + "'");
+        return resultSet.next();
+    }
+
+    //create database
     public static boolean createDatabase(String dbName) {
         try (Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
              Statement stmt = conn.createStatement()) {
-
             if (!isDatabaseExist(stmt, dbName)) {
                 stmt.executeUpdate("CREATE DATABASE " + dbName);
                 System.out.println("Database '" + dbName + "' created successfully.");
-
-                importSqlFile(sqlFilePath);
-                System.out.print("\nTo run this program smoothly, ensure the variable values in the DbConnection \n" +
-                        "class match your SQL credentials to avoid repeated logins. \n\nPress [enter]...");
-                sc.nextLine();
-                return true;
+                if(importSqlFile(sqlFilePath)){
+                    System.out.print("\nTo run this program smoothly, ensure the variable values in the DbConnection \n" +
+                    "class match your SQL credentials to avoid repeated logins. \n\nPress [enter]...");
+                    sc.nextLine();
+                    return true;
+                }else{
+                    System.out.println("An error occurred! Check your 'sqlFilePath' and try again.");
+                    stmt.executeUpdate("DROP DATABASE " + dbName);
+                    return false;
+                }
             } else {
                 System.out.println("Database '" + dbName + "' already exists.");
                 return true;
@@ -72,6 +82,7 @@ public class DatabaseConnection extends General{
         }
     }
 
+    //if failed to connect
     private static boolean databaseCreation(String dbName) {
         try {
             connectionDetails(); 
@@ -82,12 +93,8 @@ public class DatabaseConnection extends General{
         return false;
     }
 
-    private static boolean isDatabaseExist(Statement stmt, String dbName) throws SQLException {
-        ResultSet resultSet = stmt.executeQuery("SHOW DATABASES LIKE '" + dbName + "'");
-        return resultSet.next();
-    }
-
-    public static void importSqlFile(String sqlFilePath) {
+    //import schemas
+    public static boolean importSqlFile(String sqlFilePath) {
         try (Connection conn = getConnection();
              BufferedReader reader = new BufferedReader(new FileReader(sqlFilePath));
              Statement stmt = conn.createStatement()) {
@@ -105,13 +112,14 @@ public class DatabaseConnection extends General{
                         query.setLength(0);
                     } catch (SQLException e) {
                         System.err.println("Error executing SQL: " + query);
-                        e.printStackTrace();
                     }
                 }
             }
             System.out.println("Database import completed successfully!");
+            return true;
         } catch (IOException | SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
 }

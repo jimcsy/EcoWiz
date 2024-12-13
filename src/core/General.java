@@ -102,7 +102,7 @@ public class General {
     public void back(int type){
         switch(type){
             case 1:
-                System.out.print("\nPress [enter]...");
+                System.out.print("\nPress [Enter]...");
                 scan.nextLine();
                 System.out.print("\nReturning...");
                 break;
@@ -111,9 +111,15 @@ public class General {
                 delay(1500);
                 break;
             case 3:
-                System.out.print("\nPress [enter]...");
+                System.out.print("\nPress [Enter]...");
                 scan.nextLine();
                 break;
         }
+    }
+
+    public void instructionBack(){
+        String note = "Note: If you want to go back to the previous page or cancel the transaction, simply press [Enter] and you'll figure it out!";
+        designSentence(note, 70, 2);
+        back(3);
     }
 }
