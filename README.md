@@ -28,13 +28,13 @@
 </p>
 
 <h2 align = "center">
-        <a href = "https://drive.google.com/drive/u/3/folders/1MlFnAPzaqlr_FCRhPzARKhxZGPCtOl6U">
+        <a href = "https://drive.google.com/file/d/1aiKJolfXNteZxxonw-cFkIiIRlDqvRpE/view?usp=sharing">
         <img src = https://github.com/jimcsy/EcoWiz/blob/main/images/loop.gif>
         </a>
 </h2>
 
 > **Note:**
-> Please click this <a href="https://drive.google.com/drive/u/3/folders/1MlFnAPzaqlr_FCRhPzARKhxZGPCtOl6U"><strong>link</strong></a> to watch the demonstration video.
+> Please click this <a href="https://drive.google.com/file/d/1aiKJolfXNteZxxonw-cFkIiIRlDqvRpE/view?usp=sharing"><strong>link</strong></a> to watch the demonstration video.
 ___
 ## I. PROJECT OVERVIEW&nbsp;🔍
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Java-based console system was designed to support the United Nations' 12th Sustainable Development Goal (SDG) – Responsible Consumption and Production. The system simulates a point-of-sale (POS) transaction platform focused on promoting eco-friendly products. It calculates environmental impact scores and offers incentives for sustainable purchases. Developed using Java and backed by MySQL for database management, the system ensures efficient storage and retrieval of product data, transaction details, and user information.
@@ -143,6 +143,18 @@ Locate the `DatabaseConnection.java` file in your `VsCode` and update the values
     - ```bash
       java -cp "out; path\to\your\mysql-connector-java.jar" main.Ecowiz
       ```
+---
+About the Developer 🧑‍💻
+---
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Good day! I am **Genesis**, the developer of **Ecowiz**, an eco-friendly Point of Sale (POS) system. This project was developed as part of the requirements for my **Object-Oriented Programming (OOP)** course.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The journey of creating Ecowiz has been a fulfilling experience, combining my passion for sustainable practices with technical skills in `Java` and `MySQL`. Through this project, I aim to promote eco-conscious shopping by incorporating features like environmental impact calculations and incentives for sustainable choices.
+
+**Thank you for taking the time to learn about Ecowiz!**
+
+---
+[Back to Top](#i-project-overview)
+
 
 
 
